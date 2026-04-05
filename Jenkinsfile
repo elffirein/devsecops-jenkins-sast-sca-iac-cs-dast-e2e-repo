@@ -16,7 +16,7 @@ pipeline {
       steps {
         withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
           script {
-            app = docker.build("asecurityguru/testeb")
+            app = docker.build("elffirein/testeb")
           }
         }
       }
@@ -26,7 +26,7 @@ pipeline {
         withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]) {
           script {
             try {
-              sh "/usr/local/bin/snyk  container test asecurityguru/testeb"
+              sh "/usr/local/bin/snyk  container test elffirein/testeb"
             } catch (err) {
               echo err.getMessage()
             }
