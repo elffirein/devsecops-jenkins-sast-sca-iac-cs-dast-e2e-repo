@@ -43,7 +43,7 @@ pipeline {
     }
     stage('RunDASTUsingZAP') {
       steps {
-        sh "/usr/local/bin/zap.sh -port 9393 -cmd -quickurl https://www.example.com -quickprogress -quickout Output.html"
+        sh "/usr/local/bin/zap.sh -port 9393 -cmd -quickurl https://www.example.com -quickprogress -quickout /opt/zaproxy/Output.html"
       }
     }
 
