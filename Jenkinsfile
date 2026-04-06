@@ -49,7 +49,7 @@ pipeline {
 
     stage('checkov') {
       steps {
-        sh "checkov -s -f main.tf"
+        sh "/home/ubuntu/SAST_Demo/venv/bin/checkov -s -f main.tf"
       }
     }
 
